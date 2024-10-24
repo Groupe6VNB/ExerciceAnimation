@@ -1,0 +1,295 @@
+         
+         body {
+            display: flex;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .container {
+            width: 45%;
+            background-color: #ddd;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /*-----------------------barre Test noir à gauche------------------------- */
+        
+        .test p{
+            color: white;
+            padding: 5px;
+            margin-top: 0;
+            cursor: pointer;
+            position:absolute;
+            top: 0;
+        }
+        .test{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 30px;
+            border-radius: 5px;
+            margin: 5px;
+            background-color:black;
+            position: relative;
+            transition: height 5s;
+            padding: 5px;
+            margin-left: 10px; /* Décalage vers la gauche */
+            margin-top: 5px; /* Décalage vers le bas */
+        }
+        .test:hover{
+            height:670px;
+        } 
+        
+        /*--------------------------- Carré qui tourne----------------------------- */
+        .square-rotate {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin: auto;
+            animation: rotate 3s linear infinite alternate, color-change 4s linear infinite;
+            
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(500deg);
+            }
+        }
+        
+          /* Animation pour changer les couleurs */
+          @keyframes color-change {
+            0% {
+                background-color: yellow;
+            }
+            25% {
+                background-color: red;
+            }
+            50% {
+                background-color: blue;
+            }
+            75% {
+                background-color: green;
+            }
+            100% {
+                background-color: yellow;
+            }
+        }
+          
+         /*-----------------------Balle qui rebondit------------------------- */
+        .square-frame {
+            width: 20px; /* Largeur spécifiée */
+            height: 200px; /* Hauteur spécifiée */
+            border: 2px solid green; /* Bordure verte */
+            position: relative; /* Pour le positionnement de la balle */
+            overflow: hidden; /* Cache la partie de la balle qui dépasse */
+            margin: 0 auto; /* Centre le cadre dans le conteneur */
+        }
+        
+        .ball-bounce {
+            width: 20px; /* Largeur de la balle */
+            height: 20px; /* Hauteur de la balle */
+            background-color: green; /* Couleur de la balle */
+            border-radius: 50%; /* Forme de la balle */
+            position: absolute; /* Positionnement absolu pour l'animation */
+            left: 50%; /* Centre horizontalement */
+            transform: translateX(-50%); /* Ajuste pour que la balle soit centrée */
+            animation: boule 2s linear infinite; /* Animation continue */
+        }
+        @keyframes boule {
+            0% {
+                transform: translate(-50%, 0); /* Position initiale */
+            }
+            25% {
+                transform: translate(-50%, 180px); /* Première descente plus basse */
+            }
+            50% {
+                transform: translate(-50%, 130px); /* Première remontée légère */
+            }
+            75% {
+                transform: translate(-50%, 180px); /* Deuxième descente plus basse */
+            }
+            100% {
+                transform: translate(-50%, 20px); /* Légère remontée après la descente */
+            }
+        }
+        /*------------------------------ Loader---------------------------------------- */
+        .loader {
+            display: flex; 
+            justify-content: center; 
+        }
+        
+        .loader div {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            border-radius: 50%;
+            border: 1px solid black;
+            animation: blink 1.8s ease-in-out infinite; /* Animation de clignotement */
+        }
+        
+        .loader div:nth-child(1) {
+            animation-delay: 0s; /* Aucun délai pour le premier cercle */
+        }
+        
+        .loader div:nth-child(2) {
+            animation-delay: 0.6s; /* Délai pour le deuxième cercle */
+        }
+        
+        .loader div:nth-child(3) {
+            animation-delay: 1.2s; /* Délai pour le troisième cercle */
+        }
+        
+        .loader1 {
+            background-color: lightgray;
+        }
+        
+        .loader2 {
+            background-color: black;
+        }
+        
+        .loader3 {
+            background-color: gray;
+        }
+        
+        @keyframes blink {
+            0% {
+                transform: scale(1); /* Taille normale */
+                opacity: 1; /* Visible */
+            }
+            50% {
+                transform: scale(1.1); /* Légère augmentation de la taille */
+                opacity: 0.5; /* Légère transparence */
+            }
+            100% {
+                transform: scale(1); /* Retour à la taille normale */
+                opacity: 1; /* Visible */
+            }
+        }
+        
+        /* ----------------Animation de file d'attente-------------------- */
+        .queue {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .queue1{
+            background-color: lightyellow;;
+        }
+        .queue2{
+            background-color: lightcoral
+        } 
+        .queue3{
+            background-color:  lightseagreen;
+        } 
+        .queue4{
+            background-color: lightgreen;
+        } 
+        
+        .queue5{
+            background-color: lightskyblue;
+        }
+        .queue6{
+            background-color: rgb(250, 135, 244);
+        }
+        .queue div {
+            width: 20px;
+            height: 20px;
+            margin: 5px;
+            border-radius: 5px;
+            animation: queueMove 2s linear infinite;
+        }
+        @keyframes queueMove {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(100px);
+            }
+        }
+        /* --------------------Animation 3D */
+        .animation-3d {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .cube1{
+            width: 20px;
+            height: 20px;
+            margin: 5px;
+            transform: rotateY(45deg) rotateX(45deg);
+            animation: spin 3s infinite linear;
+            background-color: lightyellow;;
+        }
+        .cube2{
+            width: 20px;
+            height: 20px;
+            margin: 5px;
+            transform: rotateY(45deg) rotateX(45deg);
+            animation: spin 3s infinite linear;
+            background-color: lightcoral
+        } 
+        .cube3{
+            width: 20px;
+            height: 20px;
+            margin: 5px;
+            transform: rotateY(45deg) rotateX(45deg);
+            animation: spin 3s infinite linear;
+            background-color:  lightseagreen;
+        } 
+        .cube4{
+            width: 20px;
+            height: 20px;
+            margin: 5px;
+            transform: rotateY(45deg) rotateX(45deg);
+            animation: spin 3s infinite linear;
+            background-color: lightgreen;
+        } 
+        .cube5{
+            width: 20px;
+            height: 20px;
+            margin: 5px;
+            transform: rotateY(45deg) rotateX(45deg);
+            animation: spin 3s infinite linear;
+            background-color: lightseagreen;
+        } 
+        .cube6{
+            width: 20px;
+            height: 20px;
+            margin: 5px;
+            transform: rotateY(45deg) rotateX(45deg);
+            animation: spin 3s infinite linear;
+            background-color: lightskyblue;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+            to {
+                transform: rotateY(360deg) rotateX(360deg);
+            }
+
+            
+        }
+        
+        
+   
+
+
+
+
+        
